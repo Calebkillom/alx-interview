@@ -5,23 +5,24 @@ returns a list of lists of integers representing the Pascal’s triangle of n
 
 
 def pascal_triangle(n):
-	"""
-	returns Pascal's TRiangle
-	"""
+    """
+    Returns Pascal's Triangle as a list of lists of integers for a given n
+    """
     if n <= 0:
         return []
+    result = []
 
-    triangle = []
+    for row_index in range(n):
+        current_row = []
 
-    for i in range(n):
-        row = []
-
-        for j in range(i + 1):
-            if j == 0 or j == i:
-                row.append(1)
+        for col_index in range(row_index + 1):
+            if col_index == 0 or col_index == row_index:
+                current_row.append(1)
             else:
-                row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
+                current_row.append(
+                    result[row_index - 1][col_index - 1] + result[row_index - 1][col_index]
+                )
 
-        triangle.append(row)
+        result.append(current_row)
 
-    return triangle
+    return result
