@@ -20,7 +20,8 @@ def pascal_triangle(n):
                 current_row.append(1)
             else:
                 current_row.append(
-                    result[row_index - 1][col_index - 1] + result[row_index - 1][col_index]
+                    result[row_index - 1][col_index - 1] +
+                    result[row_index - 1][col_index]
                 )
 
         result.append(current_row)
