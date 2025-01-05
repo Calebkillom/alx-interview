@@ -6,6 +6,7 @@ Created on Sat Jan  5 16:28:00 2025
 @Author: Caleb Kilonzi
 """
 
+
 def isWinner(x, nums):
     """
     Function that checks for the winner of the game
